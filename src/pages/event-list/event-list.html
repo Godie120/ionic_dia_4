@@ -1,0 +1,28 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Lista de Eventos</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <button ion-button clear icon-start (click)="showAddEvent()">
+        <ion-icon name="md-add-circle"></ion-icon>
+        Agregar Nuevo Evento
+      </button>
+    <ion-list *ngFor="let event of events$">
+        <ion-item>
+            <ion-thumbnail item-start>
+                <img src="../../assets/imgs/grado.jpg">
+            </ion-thumbnail>
+            <h2>{{ event.name }}</h2>
+            <p>{{ event.type }}</p>
+            <p>{{ event.date }}</p>
+            <button ion-button
+                    clear
+                    item-end (click)="showEventDetailt(event)">Ver mas</button>
+        </ion-item>
+    </ion-list>
+</ion-content>
